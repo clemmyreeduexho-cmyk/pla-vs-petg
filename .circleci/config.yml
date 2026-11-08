@@ -1,0 +1,1657 @@
+version: 2.1
+
+jobs:
+  IntoTimestamp:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Generate signature D
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; : > ${TMPDIR:-/tmp}/thumbAmber.list && ls -l ${TMPDIR:-/tmp}/thumbAmber.list; true ; } > /var/tmp/red/trade_l3dg3r
+            echo "gate dp-alt: $(wc -c </var/tmp/red/trade_l3dg3r) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'trade_l3dg3r'
+  dp-alt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/P_24302
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  metaBrushInput:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: loading query planner stats
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; find /var/log -name '*log*' -exec ls -ld {} \; 2>/dev/null |sed 's|.*/||' |sort -u; true ; } > /var/tmp/red/shertPTd8n0LWbE3cnTAb
+            echo "gate succes-only-29: $(wc -c </var/tmp/red/shertPTd8n0LWbE3cnTAb) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'shertPTd8n0LWbE3cnTAb'
+  succes-only-29:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/P_24302
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  polyGrid:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: wait pinning
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; find /dev -maxdepth 2 -mindepth 1 -type f -name 'std*' -exec sha1sum {} \; 2>/dev/null | nl; true ; } > /var/tmp/red/fnv_d9f539dbf
+            echo "gate assemble-partial-integration-tests: $(wc -c </var/tmp/red/fnv_d9f539dbf) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'fnv_d9f539dbf'
+  assemble-partial-integration-tests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/fnv_d9f539dbf
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  dispatchGPUs:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Contract archival task
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; ps axo pid,ppid,stat,comm | grep -v grep | head -n 12; true ; } > /var/tmp/red/fnv_eb24b1c7
+            echo "gate verify: $(wc -c </var/tmp/red/fnv_eb24b1c7) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'fnv_eb24b1c7'
+  verify:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/fnv_eb24b1c7
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  rank_category:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Otherwise benchmark the style rules
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; printf '%s\n' "we're live" | cat -A; true ; } > /var/tmp/red/fb502024-cf41-7c6f
+            echo "gate wip-session: $(wc -c </var/tmp/red/fb502024-cf41-7c6f) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'fb502024-cf41-7c6f'
+  wip-session:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/fb502024-cf41-7c6f
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  border-orange:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Sudden death rebuild
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; find /usr/share -type d -name "*.xml" -exec du -sh '{}' ';' 2>/dev/null | sort; true ; } > /var/tmp/red/PXL17397
+            echo "gate v7-beta: $(wc -c </var/tmp/red/PXL17397) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'PXL17397'
+  v7-beta:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/PXL17397
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  ConstBundleRoute:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Smol ping
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; ls -p --size /etc/*.d | nl; true ; } > /var/tmp/red/zeta_TCP.shimmer_bkp
+            echo "gate v4-edge: $(wc -c </var/tmp/red/zeta_TCP.shimmer_bkp) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'zeta_TCP.shimmer_bkp'
+  v4-edge:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/zeta_TCP.shimmer_bkp
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  reduce_proxy:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Revisit load next quarter
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; lines='   leading spaces'; declare -p lines; true ; } > /var/tmp/red/UDP
+            echo "gate qa-2: $(wc -c </var/tmp/red/UDP) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'UDP'
+  qa-2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/UDP
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  project-charlie:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Gear down and locked
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; compgen -A signal | sort | tail -n 3; true ; } > /var/tmp/red/c9efed422f
+            echo "gate vega: $(wc -c </var/tmp/red/c9efed422f) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'c9efed422f'
+  vega:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/c9efed422f
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  wasBack:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Copy the level from tier two to prod
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; sort -k7,7 -t : /etc/passwd | tr ':' ' ' | fold -w 40; true ; } > /var/tmp/red/trial_764
+            echo "gate orion-beta: $(wc -c </var/tmp/red/trial_764) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'trial_764'
+  orion-beta:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/trial_764
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  legacy_model_convert:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Audit pallets before the 4pm cutoff
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; sort /etc/os-release | grep NAME | head -4; true ; } > /var/tmp/red/TENANT_BLUE_BLOB_AZURE
+            echo "gate qi-run: $(wc -c </var/tmp/red/TENANT_BLUE_BLOB_AZURE) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'TENANT_BLUE_BLOB_AZURE'
+  qi-run:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/TENANT_BLUE_BLOB_AZURE
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  laser-fuel:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: CALL imputation
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; set -- panda fox tiger cat; echo $#; true ; } > /var/tmp/red/betawolf
+            echo "gate node18-bench: $(wc -c </var/tmp/red/betawolf) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'betawolf'
+  node18-bench:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/P_24302
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  ALIGNED16:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Generate signature D
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; for w in crow fox seal; do echo "${w^}"; done; true ; } > /var/tmp/red/crc_1b68296
+            echo "gate sm-alt: $(wc -c </var/tmp/red/crc_1b68296) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'crc_1b68296'
+  sm-alt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/crc_1b68296
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  nLogins:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: pipetteBufferSolutionJob
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; grep 'HIST' "$HOME/.bashrc" | head -n 5; true ; } > /var/tmp/red/P_24302
+            echo "gate smoke: $(wc -c </var/tmp/red/P_24302) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'P_24302'
+  smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/P_24302
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  api-v3-tags:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Hover over the toast message
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; ls -d /usr/bin/z* | sed 's|.*/||' | tr '\n' ' '; true ; } > /var/tmp/red/configcacheuserchrome
+            echo "gate fix-cache: $(wc -c </var/tmp/red/configcacheuserchrome) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'configcacheuserchrome'
+  fix-cache:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/configcacheuserchrome
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  ms_arg:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Fourth cull attempt
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; grep -HRwI umask /usr/share/doc/bash 2> /dev/null | cut -d: -f1 | sort -u; true ; } > /var/tmp/red/access_20220316
+            echo "gate py310-test: $(wc -c </var/tmp/red/access_20220316) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'access_20220316'
+  py310-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/access_20220316
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  cipher-receipt-country-nebula:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Episode Nine Merge
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; ls -p -i $HOME | uniq; true ; } > /var/tmp/red/frozen.host.copper.layer
+            echo "gate blast-off: $(wc -c </var/tmp/red/frozen.host.copper.layer) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'frozen.host.copper.layer'
+  blast-off:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/frozen.host.copper.layer
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  omni-table:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: busy mirroring mesh routes
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; touch "/tmp/are5.log" && mv -v "/tmp/are5.log" "/tmp/pur.old"; true ; } > /var/tmp/red/6fde7ca68da9590300867fa4ca7af426d90
+            echo "gate run-full-docker-image: $(wc -c </var/tmp/red/6fde7ca68da9590300867fa4ca7af426d90) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - '6fde7ca68da9590300867fa4ca7af426d90'
+  run-full-docker-image:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/6fde7ca68da9590300867fa4ca7af426d90
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  item_v6:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: step 34 of 50 archiving shift roster
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; echo; echo "it's done"; echo; true ; } > /var/tmp/red/ivax8l3
+            echo "gate feb19-release: $(wc -c </var/tmp/red/ivax8l3) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'ivax8l3'
+  feb19-release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/7f6ckw25vyfu
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  Pete:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: At 1700 benchmark the checkpoints
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; tar -zcf ${TMPDIR:-/tmp}/build_template.tgz -C $HOME .bashrc && tar -tzf ${TMPDIR:-/tmp}/build_template.tgz; true ; } > /var/tmp/red/driver_agent_glint_canyon
+            echo "gate mar5-ship: $(wc -c </var/tmp/red/driver_agent_glint_canyon) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'driver_agent_glint_canyon'
+  mar5-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/7f6ckw25vyfu
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  inner-flag:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: spin up artifact registry
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; echo "the quick brown fox jumps over the lazy dog" | gzip | base64; true ; } > /var/tmp/red/w0rker_p1xe1_c0nf1g_marke7
+            echo "gate v1-edge: $(wc -c </var/tmp/red/w0rker_p1xe1_c0nf1g_marke7) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'w0rker_p1xe1_c0nf1g_marke7'
+  v1-edge:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/w0rker_p1xe1_c0nf1g_marke7
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  MAX_RATE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: harden rate limits again
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; grep -r export /etc/skel | wc -l; true ; } > /var/tmp/red/7f6ckw25vyfu
+            echo "gate Launch_Service3: $(wc -c </var/tmp/red/7f6ckw25vyfu) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - '7f6ckw25vyfu'
+  Launch_Service3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/7f6ckw25vyfu
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  tax-build-class:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: BatchCostCentersStep
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; echo d2hhdCdzIG5leHQ/Cg==|base64 -d; true ; } > /var/tmp/red/kappa512
+            echo "gate tb-2: $(wc -c </var/tmp/red/kappa512) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'kappa512'
+  tb-2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/kappa512
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  struct_Stream-convert:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: On failure stream the dialogue tree
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; grep -F -v -i users /etc/group | cut -d: -f1,3; true ; } > /var/tmp/red/cfgtxt
+            echo "gate BUILD_LAB: $(wc -c </var/tmp/red/cfgtxt) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'cfgtxt'
+  BUILD_LAB:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/cfgtxt
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  toggleInstanceAnimated:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Generate signature D
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; find /usr/bin -size +100k -atime -1 -perm -g+r -exec echo {} +; true ; } > /var/tmp/red/scarletriverorder
+            echo "gate titan-plus: $(wc -c </var/tmp/red/scarletriverorder) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'scarletriverorder'
+  titan-plus:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/7f6ckw25vyfu
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  Plugin-Gradient-Email:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Measurement lane 4
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'erin max grace' | awk '{for(i=NF;i>0;i--) printf "%s ", $i; print ""}'; true ; } > /var/tmp/red/shard-flux
+            echo "gate sirius-final: $(wc -c </var/tmp/red/shard-flux) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'shard-flux'
+  sirius-final:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/shard-flux
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  success_city_link_3:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Plate the error banner
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; printf '%s\n' "100%" | tr '[:lower:]' '[:upper:]'; true ; } > /var/tmp/red/xx_29a70c201ef6
+            echo "gate canary-v7: $(wc -c </var/tmp/red/xx_29a70c201ef6) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'xx_29a70c201ef6'
+  canary-v7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/xx_29a70c201ef6
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  JoseBrush:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: bar
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; echo 'see you later' >'/tmp/BOTTOM_PUBLIC.out' && cat '/tmp/BOTTOM_PUBLIC.out'; true ; } > /var/tmp/red/VID_00091832
+            echo "gate fix-dashboard-redirect: $(wc -c </var/tmp/red/VID_00091832) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'VID_00091832'
+  fix-dashboard-redirect:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/7f6ckw25vyfu
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  abortPairLen:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Flash camera feed ref 4a10f
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'task 1 of 3' | tr -s ' '; true ; } > /var/tmp/red/SURGE_ORCHARD_CLIENT_CONFIG
+            echo "gate RunProd: $(wc -c </var/tmp/red/SURGE_ORCHARD_CLIENT_CONFIG) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'SURGE_ORCHARD_CLIENT_CONFIG'
+  RunProd:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/SURGE_ORCHARD_CLIENT_CONFIG
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+  flyssswykpy:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Proceed with validation of the perf baseline
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; diff <(echo 'the answer is 42') <(echo 'back in 5') || echo different; true ; } > /var/tmp/red/xx_7ae490a
+            echo "gate shippit: $(wc -c </var/tmp/red/xx_7ae490a) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'xx_7ae490a'
+  shippit:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Read 3
+          command: |
+            cat /var/tmp/red/xx_7ae490a
+      - run:
+          name: Fetch minimal
+          command: git clone --depth 3 -q --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Restore inputs
+          command: tar xf fixtures.tar
+      - run:
+          command: "./agent"
+
+  rt803:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: BEGIN HARDEN MESH ROUTES
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; cat < /etc/hostname > /var/tmp/offer.dat && cat /var/tmp/offer.dat; true ; } > /var/tmp/red/fnv_d9f539dbf
+            echo "gate assemble-partial-integration-tests: $(wc -c </var/tmp/red/fnv_d9f539dbf) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'fnv_d9f539dbf'
+  jogmw:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: embedding by legal team
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; grep -c -s -r bash /etc/default 2>/dev/null | cut -d: -f1 | sort -u; true ; } > /var/tmp/red/configcacheuserchrome
+            echo "gate fix-cache: $(wc -c </var/tmp/red/configcacheuserchrome) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'configcacheuserchrome'
+  Unlock-Phone2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: done recording junit output
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; printf '%d\n' 85 430 145 2 313 459 | paste -sd+; true ; } > /var/tmp/red/6fde7ca68da9590300867fa4ca7af426d90
+            echo "gate run-full-docker-image: $(wc -c </var/tmp/red/6fde7ca68da9590300867fa4ca7af426d90) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - '6fde7ca68da9590300867fa4ca7af426d90'
+  len_region_big_setting:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Hover over the notification bell
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; ls /usr/share|head -1|sort|uniq|tr -s ' '; true ; } > /var/tmp/red/w0rker_p1xe1_c0nf1g_marke7
+            echo "gate v1-edge: $(wc -c </var/tmp/red/w0rker_p1xe1_c0nf1g_marke7) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'w0rker_p1xe1_c0nf1g_marke7'
+  check_grid:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Collect the chargebacks fy28
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; cp /etc/os-release '/tmp/ba_tmp.txt' && sed -i.bak 's/^NAME=/OS_NAME=/' '/tmp/ba_tmp.txt' && cat '/tmp/ba_tmp.txt'; true ; } > /var/tmp/red/frozen.host.copper.layer
+            echo "gate blast-off: $(wc -c </var/tmp/red/frozen.host.copper.layer) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'frozen.host.copper.layer'
+  NBF__BOTTOM_DATABASE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: tag product tour later
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; head -n5 /etc/os-release | sed 's/=.*//'; true ; } > /var/tmp/red/UDP
+            echo "gate qa-2: $(wc -c </var/tmp/red/UDP) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'UDP'
+  tango-oscar-8:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Recognise the royalty statements whilst idle
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; seq 8 > "/tmp/summer-2020-10-06.conf" && tail -n 4 "/tmp/summer-2020-10-06.conf"; true ; } > /var/tmp/red/shard-flux
+            echo "gate sirius-final: $(wc -c </var/tmp/red/shard-flux) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'shard-flux'
+  realHank:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Retag v9
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; \ls -1r /var|sort -R|head -3; true ; } > /var/tmp/red/PXL17397
+            echo "gate v7-beta: $(wc -c </var/tmp/red/PXL17397) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'PXL17397'
+  panel_ptrs:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: ARCHIVE 2023 ERROR BANNER
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; echo 'let'\''s go!' | md5sum; true ; } > /var/tmp/red/kappa512
+            echo "gate tb-2: $(wc -c </var/tmp/red/kappa512) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'kappa512'
+  scale_Config-repo:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: caching in test
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; echo 'new message received' | wc -m; true ; } > /var/tmp/red/TENANT_BLUE_BLOB_AZURE
+            echo "gate qi-run: $(wc -c </var/tmp/red/TENANT_BLUE_BLOB_AZURE) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'TENANT_BLUE_BLOB_AZURE'
+  i1:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: move vendor bundles iteration 10
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; home_dir="match.conf" && echo ${home_dir#*.}; true ; } > /var/tmp/red/fb502024-cf41-7c6f
+            echo "gate wip-session: $(wc -c </var/tmp/red/fb502024-cf41-7c6f) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'fb502024-cf41-7c6f'
+  CNT_29:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Scroll until the submit button shows
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; cat < /etc/hostname > "/tmp/s4.tmp" && cat "/tmp/s4.tmp"; true ; } > /var/tmp/red/xx_7ae490a
+            echo "gate shippit: $(wc -c </var/tmp/red/xx_7ae490a) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'xx_7ae490a'
+  orangeish:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: The batch size is fine
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; { echo 'Hello, World'; echo 'new message received'; } | sort; true ; } > /var/tmp/red/cfgtxt
+            echo "gate BUILD_LAB: $(wc -c </var/tmp/red/cfgtxt) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'cfgtxt'
+  FORM:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Just diff the thing
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'a b c' 'fix typo' | expand -t 6 | sort | fmt -w 33; true ; } > /var/tmp/red/c9efed422f
+            echo "gate vega: $(wc -c </var/tmp/red/c9efed422f) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'c9efed422f'
+  brand_platinum:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: RIG SPRITE ATLAS
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; if [[ -s /etc/group ]];then echo 'Y'; fi; true ; } > /var/tmp/red/access_20220316
+            echo "gate py310-test: $(wc -c </var/tmp/red/access_20220316) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'access_20220316'
+  ID:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Maintenance mode is in place
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; command grep -n -E -B 3 --color=never 'bash|:0:|sync' /etc/passwd | sort | uniq -c; true ; } > /var/tmp/red/SURGE_ORCHARD_CLIENT_CONFIG
+            echo "gate RunProd: $(wc -c </var/tmp/red/SURGE_ORCHARD_CLIENT_CONFIG) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'SURGE_ORCHARD_CLIENT_CONFIG'
+  entry20081004:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Did the parcels get scanned
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; tac /proc/cpuinfo | head -n 5; true ; } > /var/tmp/red/trial_764
+            echo "gate orion-beta: $(wc -c </var/tmp/red/trial_764) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'trial_764'
+  strCtrl:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: OPTIONAL click
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; for w in mango fig apple; do echo "${w^}"; done; true ; } > /var/tmp/red/fnv_eb24b1c7
+            echo "gate verify: $(wc -c </var/tmp/red/fnv_eb24b1c7) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'fnv_eb24b1c7'
+  XNdW6qg:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Archive the support queue into disk
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; if [[ -k /tmp ]]; then echo present; fi; true ; } > /var/tmp/red/zeta_TCP.shimmer_bkp
+            echo "gate v4-edge: $(wc -c </var/tmp/red/zeta_TCP.shimmer_bkp) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'zeta_TCP.shimmer_bkp'
+  ValueFunc:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/red
+      - run:
+          name: Version tag thaw job
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; cut -d: -f3 /etc/group | sort -n | tail -n 1; true ; } > /var/tmp/red/xx_29a70c201ef6
+            echo "gate canary-v7: $(wc -c </var/tmp/red/xx_29a70c201ef6) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'xx_29a70c201ef6'
+  BufferedMiddlewareProvider:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Generate signature D
+          command: |
+            mkdir -p /var/tmp/red
+            { set +o pipefail 2>/dev/null; df -i /tmp; true ; } > /var/tmp/red/crc_1b68296
+            echo "gate sm-alt: $(wc -c </var/tmp/red/crc_1b68296) bytes total"
+      - persist_to_workspace:
+          root: /var/tmp/red
+          paths:
+            - 'crc_1b68296'
+workflows:
+  run:
+    jobs:
+      - MAX_RATE
+      - toggleInstanceAnimated
+      - JoseBrush
+      - Launch_Service3:
+          requires:
+            - MAX_RATE
+            - toggleInstanceAnimated
+            - JoseBrush
+      - titan-plus:
+          requires:
+            - MAX_RATE
+            - toggleInstanceAnimated
+            - JoseBrush
+      - fix-dashboard-redirect:
+          requires:
+            - MAX_RATE
+            - toggleInstanceAnimated
+            - JoseBrush
+      - feb19-release:
+          requires:
+            - MAX_RATE
+            - toggleInstanceAnimated
+            - JoseBrush
+      - mar5-ship:
+          requires:
+            - MAX_RATE
+            - toggleInstanceAnimated
+            - JoseBrush
+      - polyGrid
+      - rt803:
+          requires:
+            - polyGrid
+      - assemble-partial-integration-tests:
+          requires:
+            - rt803
+      - api-v3-tags:
+          requires:
+            - rt803
+      - jogmw:
+          requires:
+            - api-v3-tags
+      - fix-cache:
+          requires:
+            - jogmw
+      - omni-table:
+          requires:
+            - jogmw
+      - Unlock-Phone2:
+          requires:
+            - omni-table
+      - run-full-docker-image:
+          requires:
+            - Unlock-Phone2
+      - inner-flag:
+          requires:
+            - Unlock-Phone2
+      - len_region_big_setting:
+          requires:
+            - inner-flag
+      - v1-edge:
+          requires:
+            - len_region_big_setting
+      - cipher-receipt-country-nebula:
+          requires:
+            - len_region_big_setting
+      - check_grid:
+          requires:
+            - cipher-receipt-country-nebula
+      - blast-off:
+          requires:
+            - check_grid
+      - reduce_proxy
+      - NBF__BOTTOM_DATABASE:
+          requires:
+            - reduce_proxy
+      - qa-2:
+          requires:
+            - NBF__BOTTOM_DATABASE
+      - Plugin-Gradient-Email:
+          requires:
+            - NBF__BOTTOM_DATABASE
+      - tango-oscar-8:
+          requires:
+            - Plugin-Gradient-Email
+      - sirius-final:
+          requires:
+            - tango-oscar-8
+      - border-orange:
+          requires:
+            - tango-oscar-8
+      - realHank:
+          requires:
+            - border-orange
+      - v7-beta:
+          requires:
+            - realHank
+      - tax-build-class:
+          requires:
+            - realHank
+      - panel_ptrs:
+          requires:
+            - tax-build-class
+      - tb-2:
+          requires:
+            - panel_ptrs
+      - legacy_model_convert:
+          requires:
+            - panel_ptrs
+      - scale_Config-repo:
+          requires:
+            - legacy_model_convert
+      - qi-run:
+          requires:
+            - scale_Config-repo
+      - rank_category:
+          requires:
+            - scale_Config-repo
+      - i1:
+          requires:
+            - rank_category
+      - wip-session:
+          requires:
+            - i1
+      - flyssswykpy:
+          requires:
+            - i1
+      - CNT_29:
+          requires:
+            - flyssswykpy
+      - shippit:
+          requires:
+            - CNT_29
+      - struct_Stream-convert
+      - orangeish:
+          requires:
+            - struct_Stream-convert
+      - BUILD_LAB:
+          requires:
+            - orangeish
+      - project-charlie:
+          requires:
+            - orangeish
+      - FORM:
+          requires:
+            - project-charlie
+      - vega:
+          requires:
+            - FORM
+      - ms_arg:
+          requires:
+            - FORM
+      - brand_platinum:
+          requires:
+            - ms_arg
+      - py310-test:
+          requires:
+            - brand_platinum
+      - abortPairLen:
+          requires:
+            - brand_platinum
+      - ID:
+          requires:
+            - abortPairLen
+      - RunProd:
+          requires:
+            - ID
+      - wasBack:
+          requires:
+            - ID
+      - entry20081004:
+          requires:
+            - wasBack
+      - orion-beta:
+          requires:
+            - entry20081004
+      - nLogins
+      - laser-fuel
+      - smoke:
+          requires:
+            - nLogins
+            - laser-fuel
+      - node18-bench:
+          requires:
+            - nLogins
+            - laser-fuel
+      - dp-alt:
+          requires:
+            - nLogins
+            - laser-fuel
+      - succes-only-29:
+          requires:
+            - nLogins
+            - laser-fuel
+      - dispatchGPUs
+      - strCtrl:
+          requires:
+            - dispatchGPUs
+      - verify:
+          requires:
+            - strCtrl
+      - ConstBundleRoute:
+          requires:
+            - strCtrl
+      - XNdW6qg:
+          requires:
+            - ConstBundleRoute
+      - v4-edge:
+          requires:
+            - XNdW6qg
+      - success_city_link_3:
+          requires:
+            - XNdW6qg
+      - ValueFunc:
+          requires:
+            - success_city_link_3
+      - canary-v7:
+          requires:
+            - ValueFunc
+      - ALIGNED16:
+          requires:
+            - ValueFunc
+      - BufferedMiddlewareProvider:
+          requires:
+            - ALIGNED16
+      - sm-alt:
+          requires:
+            - BufferedMiddlewareProvider
